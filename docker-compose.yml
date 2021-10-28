@@ -1,15 +1,19 @@
-version: "2.2"
+version: "3.3"
 services:
-  asir_bind9:
-    image: internetsystemsconsortium/bind9:9.16
-    ports:
-      - 53:53
-    volumes:
-      - conf:/etc/bind
-  asir_cliente:
-    image: ubuntu
-    stdin_open: true  # docker run -i
-    tty: true         # docker run -t
+ asir_bind9:
+   image: internetsystemsconsortium/bind9:9.16
+   network_mode: bridge
+   ports:
+     - 53:53
+   volumes:
+     - conf:/etc/bind
+ asir_cliente:
+   image: ubuntu
+   network_mode: bridge
+   stdin_open: true  # docker run -i
+   tty: true         # docker run -t
+   dns:
+     - 172.19.0.3
 volumes:
-  conf:
-    external: true
+ conf:
+   external: true
