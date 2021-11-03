@@ -1,15 +1,17 @@
 version: "3.3"
 services:
  asir_bind9:
-   image: internetsystemsconsortium/bind9:9.16
-   network_mode: bridge
+   image: ubuntu
+   networks:
+      - br02
    ports:
      - 53:53
    volumes:
      - conf:/etc/bind
  asir_cliente:
    image: ubuntu
-   network_mode: bridge
+   networks:
+      - br02
    stdin_open: true  # docker run -i
    tty: true         # docker run -t
    dns:
@@ -17,3 +19,6 @@ services:
 volumes:
  conf:
    external: true
+networks:
+  br02:
+    external: true # tenemos que tenerlo crado previamente
