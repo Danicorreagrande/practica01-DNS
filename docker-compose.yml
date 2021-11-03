@@ -22,4 +22,4 @@ volumes:
    external: true
 networks:
   br02:
-    external: true # tenemos que tenerlo crado previamente
+    external: true # tenemos que tenerlo creado previamente
