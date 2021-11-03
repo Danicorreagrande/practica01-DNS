@@ -1,4 +1,5 @@
 version: "3.3"
+
 services:
  asir_bind9:
    image: ubuntu
@@ -16,9 +17,11 @@ services:
    tty: true         # docker run -t
    dns:
      - 172.19.0.3 # el contenedor dns server
+
 volumes:
  conf:
    external: true
+
 networks:
   br02:
     external: true # tenemos que tenerlo crado previamente
