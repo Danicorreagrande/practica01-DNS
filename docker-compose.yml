@@ -1,7 +1,7 @@
 version: "3.3"
 services:
  asir_bind9:
-   image: ubuntu
+   image: internetsystemsconsortium/bind9:9.16
    networks:
       - br02
    ports:
