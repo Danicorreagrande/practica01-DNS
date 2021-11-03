@@ -20,6 +20,6 @@ volumes:
  conf:
    external: true
 
-netorks:
+networks:
   br02:
     external: true # tenemos que tenerlo crado previamente
