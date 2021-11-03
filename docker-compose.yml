@@ -19,7 +19,6 @@ services:
 volumes:
  conf:
    external: true
-
 networks:
   br02:
     external: true # tenemos que tenerlo crado previamente
