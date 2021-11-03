@@ -3,7 +3,7 @@ services:
  asir_bind9:
    image: internetsystemsconsortium/bind9:9.16
    networks:
-      - br02
+      - br02:
         ipv4_address: 10.1.0.254
    ports:
      - 53:53
